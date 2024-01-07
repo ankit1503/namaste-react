@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaste React</title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- <h1>Hello World!</h1> --> => same thing using JS now we will do using react
+    </div>
+    <script>
+      const heading = document.createElement("h1");
+      heading.innerHTML = "hello world from JS !";
+      var root = document.getElementById("root");
+      root.appendChild(heading);
+    </script>
+  </body>
+</html>
+
+
+
+browser knows document , innerHtml and all thing as browser understand JS .
+but browser dont know react 
+for that we took react from CDN (content delivery network ) and which hosted react library we will use in our project.
+
+
+we will do same hello world program using react.
+=>
+<script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+      const heading = React.createElement("h1", {}, "Hello World From React !");
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(heading);
+    </script>
+
+React will take care of react part 
+ReactDOM will do DOM part for browser
+React and ReactDOM are two separate packages in the React library that serve different purposes.
+
+1. **React:**
+   - **Core Library:** React is the core library for building user interfaces in a declarative and component-based manner. It provides the functionality to create and manage components, handle state and props, and efficiently update the DOM.
+
+   - **Platform-Agnostic:** React is not tied to any specific platform or rendering engine. It can be used to build applications for the web (using ReactDOM), mobile (using React Native), and other platforms.
+
+   - **Component Lifecycle:** React defines the component lifecycle methods (e.g., `componentDidMount`, `componentDidUpdate`) and allows developers to manage the state and behavior of components.
+
+   - **Virtual DOM:** React utilizes a virtual DOM to optimize and batch updates to the actual DOM, improving performance by minimizing unnecessary re-rendering.
+
+2. **ReactDOM:**
+   - **DOM-Specific Operations:** ReactDOM is a package specifically designed for working with the Document Object Model (DOM). It contains methods for interacting with the DOM, such as rendering React components into HTML elements, updating the DOM based on state changes, and handling events.
+
+   - **Web-Specific:** ReactDOM is intended for web applications. It enables the integration of React components into web pages by providing functions like `ReactDOM.render()` to mount React components onto HTML elements.
+
+   - **Entry Point for Web Development:** In a typical web application, ReactDOM is the entry point for integrating React into the DOM. It is often used in conjunction with bundlers like Webpack or tools like Create React App.
+
+In summary, React is the core library that enables the creation of reusable and declarative components, while ReactDOM is a package specifically focused on the integration of React with the DOM for web development. When building web applications, developers often use both React and ReactDOM together to create dynamic and interactive user interfaces.
+

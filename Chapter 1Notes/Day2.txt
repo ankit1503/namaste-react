@@ -1,0 +1,9 @@
+const heading = React.createElement(
+"h1", {}, 
+"Hello World From React !");
+
+console.log(heading); // it will return JS object or react Element it is not a html h1 tag
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(heading); // render will convert heading to html h1 tag and render it to DOM
+
